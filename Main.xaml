@@ -1,4 +1,4 @@
-<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="795.2,3964.8" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+<Activity mc:Ignorable="sap sap2010" x:Class="Main" mva:VisualBasic.Settings="{x:Null}" sap:VirtualizedContainerService.HintSize="627.333333333333,4008.66666666667" sap2010:WorkflowViewState.IdRef="ActivityBuilder_1" xmlns="http://schemas.microsoft.com/netfx/2009/xaml/activities" xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" xmlns:mva="clr-namespace:Microsoft.VisualBasic.Activities;assembly=System.Activities" xmlns:sap="http://schemas.microsoft.com/netfx/2009/xaml/activities/presentation" xmlns:sap2010="http://schemas.microsoft.com/netfx/2010/xaml/activities/presentation" xmlns:scg="clr-namespace:System.Collections.Generic;assembly=mscorlib" xmlns:sd="clr-namespace:System.Data;assembly=System.Data" xmlns:si="clr-namespace:System.IO;assembly=mscorlib" xmlns:snm="clr-namespace:System.Net.Mail;assembly=System" xmlns:ue="clr-namespace:UiPath.Excel;assembly=UiPath.Excel.Activities" xmlns:ueab="clr-namespace:UiPath.Excel.Activities.Business;assembly=UiPath.Excel.Activities" xmlns:ui="http://schemas.uipath.com/workflow/activities" xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
   <TextExpression.NamespacesForImplementation>
     <scg:List x:TypeArguments="x:String" Capacity="37">
       <x:String>System.Activities</x:String>
@@ -67,12 +67,11 @@
       <AssemblyReference>System.ComponentModel.Composition</AssemblyReference>
       <AssemblyReference>System.Memory</AssemblyReference>
       <AssemblyReference>UiPath.Excel</AssemblyReference>
-      <AssemblyReference>System.Runtime.WindowsRuntime</AssemblyReference>
       <AssemblyReference>UiPath.Excel.Activities</AssemblyReference>
       <AssemblyReference>UiPath.Mail.Activities</AssemblyReference>
     </scg:List>
   </TextExpression.ReferencesForImplementation>
-  <Sequence DisplayName="Main sequence" sap:VirtualizedContainerService.HintSize="625.6,3900" sap2010:WorkflowViewState.IdRef="Sequence_1">
+  <Sequence DisplayName="Main sequence" sap:VirtualizedContainerService.HintSize="628,3944" sap2010:WorkflowViewState.IdRef="Sequence_1">
     <Sequence.Variables>
       <Variable x:TypeArguments="x:String" Name="pdfOutput" />
       <Variable x:TypeArguments="x:String" Name="invoiceNo" />
@@ -86,28 +85,28 @@
         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
       </scg:Dictionary>
     </sap:WorkflowViewStateService.ViewState>
-    <ui:GetOutlookMailMessages Filter="{x:Null}" FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" Account="ashfaaqeathally10@outlook.com" DisplayName="Get Outlook Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="584,22.4" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MailFolder="Inbox" MarkAsRead="False" Messages="[emailList]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Top="30" />
-    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="584,587.2" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[emailList]">
+    <ui:GetOutlookMailMessages Filter="{x:Null}" FilterByMessageIds="{x:Null}" TimeoutMS="{x:Null}" Account="ashfaaqeathally10@outlook.com" DisplayName="Get Outlook Mail Messages" GetAttachements="False" sap:VirtualizedContainerService.HintSize="586,22" sap2010:WorkflowViewState.IdRef="GetOutlookMailMessages_1" MailFolder="Inbox" MarkAsRead="False" Messages="[emailList]" OnlyUnreadMessages="True" OrderByDate="NewestFirst" Top="30" />
+    <ui:ForEach x:TypeArguments="snm:MailMessage" CurrentIndex="{x:Null}" DisplayName="For Each" sap:VirtualizedContainerService.HintSize="586,600" sap2010:WorkflowViewState.IdRef="ForEach`1_2" Values="[emailList]">
       <ui:ForEach.Body>
         <ActivityAction x:TypeArguments="snm:MailMessage">
           <ActivityAction.Argument>
             <DelegateInArgument x:TypeArguments="snm:MailMessage" Name="item" />
           </ActivityAction.Argument>
-          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="524.8,462.4" sap2010:WorkflowViewState.IdRef="Sequence_4">
+          <Sequence DisplayName="Body" sap:VirtualizedContainerService.HintSize="526,472" sap2010:WorkflowViewState.IdRef="Sequence_4">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <If Condition="[item.Subject.Contains(&quot;[INVOICE]&quot;)]" sap:VirtualizedContainerService.HintSize="483.2,369.6" sap2010:WorkflowViewState.IdRef="If_1">
+            <If Condition="[item.Subject.Contains(&quot;[INVOICE]&quot;)]" sap:VirtualizedContainerService.HintSize="484,380" sap2010:WorkflowViewState.IdRef="If_1">
               <If.Then>
-                <Sequence sap:VirtualizedContainerService.HintSize="375.2,180.8" sap2010:WorkflowViewState.IdRef="Sequence_5">
+                <Sequence sap:VirtualizedContainerService.HintSize="376,185.333333333333" sap2010:WorkflowViewState.IdRef="Sequence_5">
                   <sap:WorkflowViewStateService.ViewState>
                     <scg:Dictionary x:TypeArguments="x:String, x:Object">
                       <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                     </scg:Dictionary>
                   </sap:WorkflowViewStateService.ViewState>
-                  <ui:SaveMailAttachments Attachments="{x:Null}" DisplayName="Save Attachments" FolderPath="Data\Input" sap:VirtualizedContainerService.HintSize="333.6,88" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[item]" OverwriteExisting="False" />
+                  <ui:SaveMailAttachments Attachments="{x:Null}" DisplayName="Save Attachments" FolderPath="Data\Input" sap:VirtualizedContainerService.HintSize="334,93.3333333333333" sap2010:WorkflowViewState.IdRef="SaveMailAttachments_1" Message="[item]" OverwriteExisting="False" />
                 </Sequence>
               </If.Then>
               <If.Else>
@@ -124,7 +123,7 @@
         </ActivityAction>
       </ui:ForEach.Body>
     </ui:ForEach>
-    <ui:ForEachFileX DisplayName="For Each File in Folder" Filter="*.pdf" Folder="D:\rsrko\Documents\UiPath\Assignment 1\Data\Input" sap:VirtualizedContainerService.HintSize="584,3117.6" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst">
+    <ui:ForEachFileX DisplayName="For Each File in Folder" Filter="*.pdf" Folder="C:\Users\zohra magho\Documents\UiPath\Assignment1RPA\Data\Input" sap:VirtualizedContainerService.HintSize="586,3150" sap2010:WorkflowViewState.IdRef="ForEachFileX_1" IncludeSubDirectories="False" OrderBy="NameAscFirst">
       <ui:ForEachFileX.Body>
         <ActivityAction x:TypeArguments="si:FileInfo, x:Int32">
           <ActivityAction.Argument1>
@@ -133,18 +132,18 @@
           <ActivityAction.Argument2>
             <DelegateInArgument x:TypeArguments="x:Int32" Name="CurrentIndex" />
           </ActivityAction.Argument2>
-          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="550.4,2883.2" sap2010:WorkflowViewState.IdRef="Sequence_2">
+          <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="552,2911.33333333333" sap2010:WorkflowViewState.IdRef="Sequence_2">
             <sap:WorkflowViewStateService.ViewState>
               <scg:Dictionary x:TypeArguments="x:String, x:Object">
                 <x:Boolean x:Key="IsExpanded">True</x:Boolean>
               </scg:Dictionary>
             </sap:WorkflowViewStateService.ViewState>
-            <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text" FileName="[CurrentFile.FullName]" sap:VirtualizedContainerService.HintSize="508.8,60" sap2010:WorkflowViewState.IdRef="ReadPDFText_1" Range="All" Text="[pdfOutput]" />
-            <ui:TextToLeftRight DisplayName="Text to Right" FullText="[pdfOutput]" sap:VirtualizedContainerService.HintSize="508.8,274.4" sap2010:WorkflowViewState.IdRef="TextToLeftRight_2" Separator="INVOICE #" SeparatorKey="Custom" TextToLeft="[Dummy]" TextToRight="[invoiceNo]" />
-            <ui:TextToLeftRight CustomSeparatorEnabled="False" DisplayName="Text to Left/Right" FullText="[invoiceNo]" sap:VirtualizedContainerService.HintSize="508.8,241.6" sap2010:WorkflowViewState.IdRef="TextToLeftRight_3" Separator="&#xD;&#xA;" SeparatorKey="NewLine" TextToLeft="[invoiceNo]" TextToRight="[Dummy]" />
-            <ui:TextToLeftRight DisplayName="Text to Left/Right" FullText="[pdfOutput]" sap:VirtualizedContainerService.HintSize="508.8,274.4" sap2010:WorkflowViewState.IdRef="TextToLeftRight_4" Separator="QUANTITY DESCRIPTION UNIT PRICE TOTAL" SeparatorKey="Custom" TextToLeft="[Dummy]" TextToRight="[invoiceLines]" />
-            <ui:TextToLeftRight DisplayName="Text to Left/Right" FullText="[invoiceLines]" sap:VirtualizedContainerService.HintSize="508.8,274.4" sap2010:WorkflowViewState.IdRef="TextToLeftRight_5" Separator="SUBTOTAL" SeparatorKey="Custom" TextToLeft="[invoiceLines]" TextToRight="[Dummy]" />
-            <Assign sap:VirtualizedContainerService.HintSize="508.8,60" sap2010:WorkflowViewState.IdRef="Assign_1">
+            <ui:ReadPDFText PreserveFormatting="{x:Null}" DisplayName="Read PDF Text" FileName="[CurrentFile.FullName]" sap:VirtualizedContainerService.HintSize="510,58.6666666666667" sap2010:WorkflowViewState.IdRef="ReadPDFText_1" Range="All" Text="[pdfOutput]" />
+            <ui:TextToLeftRight DisplayName="Text to Right" FullText="[pdfOutput]" sap:VirtualizedContainerService.HintSize="510,278" sap2010:WorkflowViewState.IdRef="TextToLeftRight_2" Separator="INVOICE #" SeparatorKey="Custom" TextToLeft="[Dummy]" TextToRight="[invoiceNo]" />
+            <ui:TextToLeftRight CustomSeparatorEnabled="False" DisplayName="Text to Left/Right" FullText="[invoiceNo]" sap:VirtualizedContainerService.HintSize="510,245.333333333333" sap2010:WorkflowViewState.IdRef="TextToLeftRight_3" Separator="&#xA;" SeparatorKey="NewLine" TextToLeft="[invoiceNo]" TextToRight="[Dummy]" />
+            <ui:TextToLeftRight DisplayName="Text to Left/Right" FullText="[pdfOutput]" sap:VirtualizedContainerService.HintSize="510,278" sap2010:WorkflowViewState.IdRef="TextToLeftRight_4" Separator="QUANTITY DESCRIPTION UNIT PRICE TOTAL" SeparatorKey="Custom" TextToLeft="[Dummy]" TextToRight="[invoiceLines]" />
+            <ui:TextToLeftRight DisplayName="Text to Left/Right" FullText="[invoiceLines]" sap:VirtualizedContainerService.HintSize="510,278" sap2010:WorkflowViewState.IdRef="TextToLeftRight_5" Separator="SUBTOTAL" SeparatorKey="Custom" TextToLeft="[invoiceLines]" TextToRight="[Dummy]" />
+            <Assign sap:VirtualizedContainerService.HintSize="510,62" sap2010:WorkflowViewState.IdRef="Assign_1">
               <Assign.To>
                 <OutArgument x:TypeArguments="x:String">[invoiceLines]</OutArgument>
               </Assign.To>
@@ -152,23 +151,23 @@
                 <InArgument x:TypeArguments="x:String" xml:space="preserve">[invoiceLines.Replace("  ","|")]</InArgument>
               </Assign.Value>
             </Assign>
-            <ui:GenerateDataTable ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" CSVParsing="False" ColumnSeparators="|" DataTable="[dtInvoiceLines]" DisplayName="Generate Data Table" sap:VirtualizedContainerService.HintSize="508.8,203.2" sap2010:WorkflowViewState.IdRef="GenerateDataTable_1" Input="[invoiceLines]" />
-            <ui:MoveFile ContinueOnError="{x:Null}" Destination="D:\rsrko\Documents\UiPath\Assignment 1\Data\Processed\Processed pdfs" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="508.8,160" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[CurrentFile.FullName]" />
-            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="508.8,922.4" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" WorkbookPath="[&quot;Data\Processed\&quot;+invoiceNo+&quot;.xlsx&quot;]">
+            <ui:GenerateDataTable ColumnSizes="{x:Null}" NewLineSeparator="{x:Null}" Positions="{x:Null}" CSVParsing="False" ColumnSeparators="|" DataTable="[dtInvoiceLines]" DisplayName="Generate Data Table" sap:VirtualizedContainerService.HintSize="510,202.666666666667" sap2010:WorkflowViewState.IdRef="GenerateDataTable_1" Input="[invoiceLines]" />
+            <ui:MoveFile ContinueOnError="{x:Null}" Destination="C:\Users\zohra magho\Documents\UiPath\Assignment1RPA\Data\Processed" DisplayName="Move File" sap:VirtualizedContainerService.HintSize="510,162" sap2010:WorkflowViewState.IdRef="MoveFile_1" Overwrite="True" Path="[CurrentFile.FullName]" />
+            <ueab:ExcelApplicationCard Password="{x:Null}" ReadFormatting="{x:Null}" DisplayName="Use Excel File" sap:VirtualizedContainerService.HintSize="510,934.666666666667" sap2010:WorkflowViewState.IdRef="ExcelApplicationCard_1" WorkbookPath="[&quot;Data\Processed\&quot;+invoiceNo+&quot;.xlsx&quot;]">
               <ueab:ExcelApplicationCard.Body>
                 <ActivityAction x:TypeArguments="ue:IWorkbookQuickHandle">
                   <ActivityAction.Argument>
                     <DelegateInArgument x:TypeArguments="ue:IWorkbookQuickHandle" Name="Excel" />
                   </ActivityAction.Argument>
-                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="475.2,652.8" sap2010:WorkflowViewState.IdRef="Sequence_3">
+                  <Sequence DisplayName="Do" sap:VirtualizedContainerService.HintSize="476,658" sap2010:WorkflowViewState.IdRef="Sequence_3">
                     <sap:WorkflowViewStateService.ViewState>
                       <scg:Dictionary x:TypeArguments="x:String, x:Object">
                         <x:Boolean x:Key="IsExpanded">True</x:Boolean>
                       </scg:Dictionary>
                     </sap:WorkflowViewStateService.ViewState>
-                    <ueab:WriteCellX Cell="[Excel.Sheet(&quot;InvoiceInfo&quot;).Cell(&quot;A1&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="433.6,160" sap2010:WorkflowViewState.IdRef="WriteCellX_2" Value="[&quot;Invoice Number&quot;]" />
-                    <ueab:WriteCellX Cell="[Excel.Sheet(&quot;InvoiceInfo&quot;).Cell(&quot;B1&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="433.6,160" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[invoiceNo]" />
-                    <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;InvoiceLines&quot;)]" DisplayName="Write DataTable to Excel" ExcludeHeaders="True" sap:VirtualizedContainerService.HintSize="433.6,160" sap2010:WorkflowViewState.IdRef="WriteRangeX_1" IgnoreEmptySource="False" Source="[dtInvoiceLines]" />
+                    <ueab:WriteCellX Cell="[Excel.Sheet(&quot;InvoiceInfo&quot;).Cell(&quot;A1&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,162" sap2010:WorkflowViewState.IdRef="WriteCellX_2" Value="[&quot;Invoice Number&quot;]" />
+                    <ueab:WriteCellX Cell="[Excel.Sheet(&quot;InvoiceInfo&quot;).Cell(&quot;B1&quot;)]" DisplayName="Write Cell" sap:VirtualizedContainerService.HintSize="434,162" sap2010:WorkflowViewState.IdRef="WriteCellX_1" Value="[invoiceNo]" />
+                    <ueab:WriteRangeX Destination="[Excel.Sheet(&quot;InvoiceLines&quot;)]" DisplayName="Write DataTable to Excel" ExcludeHeaders="True" sap:VirtualizedContainerService.HintSize="434,162" sap2010:WorkflowViewState.IdRef="WriteRangeX_1" IgnoreEmptySource="False" Source="[dtInvoiceLines]" />
                   </Sequence>
                 </ActivityAction>
               </ueab:ExcelApplicationCard.Body>
